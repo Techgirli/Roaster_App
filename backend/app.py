@@ -12,7 +12,7 @@ def hello_world():
 
 @app.route("/roster/<team>")
 def get_roster(team):
-    url = f"https://www.example.com/teams/{team}/roster"
+    url = f"https://www.mlb.com/{team}/roster/40-man"
     print(url)
 
     response = requests.get(url)
