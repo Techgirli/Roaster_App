@@ -1,8 +1,9 @@
-from flask import Flask
+from flask_cors import CORS
 import requests
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/")
@@ -19,14 +20,15 @@ def get_roster(team):
     print(response)
 
     if response.status_code == 200:
-       soup = BeautifulSoup(response.content, 'html.parser')
-       fourty_man_roster = soup.find('div', 'players).find_all('table', 'roster_table)
-       team_roster = []
-       print(team)
-       print('------------------')
-       for roaster in fourty_man_roster:
-           players = roster.find('tbody').find_all('tr')
-           for player in players:
-               found_player = player.find('td', 'info').find('a')
-                team_roster.append(found_player.string
-       return f"<h1>{team_roaster}</h1>"
+        soup = BeautifulSoup(response.content, 'html.parser')
+        fourty_man_roster = soup.find(
+            'div', 'players').find_all('table', 'roster_table')
+        team_roster = []
+        print(team)
+        print('------------------')
+        for roster in fourty_man_roster:
+            players = roster.find('tbody').find_all('tr')
+            for player in players:
+                found_player = player.find('td', 'info').find('a')
+                team_roster.append(found_player.string)
+        return f"<h1>{team_roster}</h1>"
