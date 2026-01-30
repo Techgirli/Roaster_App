@@ -12,10 +12,10 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <Dropdown
-        placeholder="Select Friend"
-        fluid
-        selection
-        options={friendOptions}
+          placeholder="Select Friend"
+          fluid
+          selection
+          options={friendOptions}
         />
         <a
           className="App-link"
