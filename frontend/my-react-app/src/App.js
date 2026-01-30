@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import 'semantic-ui-css/semantic.min.css'
+import { Dropdown } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 import './App.css';
-import { Dropdown } from 'semantic-ui-react';
+
+const teams = [
+  {text: 'Boston Red Sox', value:'redsox'},
+  {text: 'New York Yankees', value:'yankees'},
+  {text: 'Los Angeles Dodgers', value:'dodgers'},
+  {text: 'Chicago Cubs', value:'cubs'},
+]
 
 function App() {
   return (
@@ -12,19 +20,12 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <Dropdown
-          placeholder="Select Friend"
+          placeholder="Select Team"
           fluid
           selection
-          options={friendOptions}
+          options={teams}
         />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button>Click Me</Button>
     </div>
   );
 }
