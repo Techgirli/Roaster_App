@@ -16,12 +16,12 @@ function App() {
 
   const [team, setTeam] = useState(0)
 
-  const handleChange = {event, data} => {
+  const handleChange = ({event, data}) => {
     setTeam(data.value)
   } 
 
   const fetchRoster = async() => { 
-    const url = 'http://127.0.0.1:4094/roster/${team}'
+   const url = `http://127.0.0.1:4094/roster/${team}`
     const response = await axios.get(url)
     console.log(response)
   }
